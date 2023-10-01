@@ -1,0 +1,118 @@
+/* overflow tira a rolagem da página caso tenha em excesso */
+body {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+/* este main after seria para o efeito do preto na página por cima da imagem */
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+    background: linear-gradient(-233deg, #000000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+/* esconde as imagens enquanto uma esta sendo apresentada no site*/
+/* vh - unidade de medida, altura do aparelho que o dispositivo da pessoa tem */
+main .personagem {
+    display: none;
+    height: 100vh;
+}
+
+/* fazer verificação só para aparecer a imagem do luffy */
+main .personagem.selecionado {
+    display: block;
+}
+
+/* aqui fica o espaço, pois a imagem é uma classe para todos */
+/* largura((width)) e altura((height)) respectivamente */
+/* object fit não deixa a imagem distorcida - mantem as dimensões da imagem */
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* top:0 joga tudo la pra cima */
+/* display flex pesquisar */
+/* colum dispõe os elementos um embaixo do outro */
+/* justify content alinhar o conteudo verticalmente ! NECESSITA DE ESPAÇO por isso usa-se o min widht e max-widht para definir seu espaço*/
+.conteudo {
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+/* espaço novamente por conta do setor de descendência */
+/* color mudar a cor do texto */
+/* fint size e family mexer na fonte */
+/* font weight peso da fonte */
+/* margin bottom espaçamento embaixo dos elementos */
+.conteudo .nome-personagem{
+    color: #FFFFFF;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* line height altura das linhas */
+.conteudo .descricao {
+    color: #FFFFFF;
+    font-family: "Rubik";
+    line-height: 24px;
+}
+
+/* css na parte de imagens tem que colocar ../ */
+.conteudo .logo {
+    background-image: url(../imagens/one-piece-logo.png);
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+
+/* gap espaçamento quando se utiliza o display flex */
+/* justify content alinhamento vertical dos botões */
+/* align items alinhamento horizontal dos botões */
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* cursor pointer mostra a maozinha assim que passa o mouse sobre um botão por exemplo */
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* degrade dos botões */
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+/* aumentando o tamanho do botão do luffy para se destacar */
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9;
+}
