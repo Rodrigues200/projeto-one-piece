@@ -1,3 +1,9 @@
+@media (max-width: 955px) {
+    .descricao {
+        width: 70%;
+    }
+}
+
 @media (max-width: 769px) {
     main::after {
         background: linear-gradient(0deg, #000 20%, rgba(0, 0, 0, 0.00) 65%) no-repeat;
@@ -11,7 +17,6 @@
     .conteudo {
         justify-content: flex-end;
         left: 0;
-        top: 200px;
         max-width: 100vw;
         padding: 30px;
     }
@@ -34,32 +39,37 @@
     .botoes .botao img {
         max-width: 60px;
     }
+
+    .descricao {
+        width: 100%;
+    }
 }
 
-@media (max-width: 425px) {
-    main .personagem .imagem {
-        height: auto;
-    }
-
-    .conteudo .logo {
-        width: 170px;
-        height: 75px;
-    }
-
+@media (max-width: 550px) {
     .conteudo {
-        top: -30%;
+        top: 120px;
+        opacity: .7;
     }
-
-    .conteudo .nome-personagem {
-        font-size: 24px;
+    .descricao {
+        font-size: 13px;
     }
+}
 
+@media (max-width: 525px) {
+    .descricao {
+        width: 70%;
+    }
+}
+
+@media (max-width: 450px) {
+    .descricao {
+        display: none;
+    }
+}
+
+
+@media (max-width: 425px) {
     .botoes {
-        padding: 20px;
-        top: -20%;
-    }
-
-    .botoes .botao img {
-        max-width: 50px;
+        justify-content: flex-start;
     }
 }
